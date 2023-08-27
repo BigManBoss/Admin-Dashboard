@@ -27,7 +27,7 @@ h1 {
     display: grid;
     grid-template-columns: 1fr 4fr;
     grid-template-rows: 1fr 5fr;
-    position: fixed;
+    /* position: fixed; */
 }
 /*dashboard css*/
 #dashboard {
@@ -35,6 +35,7 @@ h1 {
     display: grid;
     grid-template-columns: auto 10px;
     transition-delay: 1s;
+    z-index: 11;
 }
 .dashboard-color-block {
     grid-column: 2/-1;
@@ -43,7 +44,7 @@ h1 {
 }
 .cont-dashboard {
     grid-area: 1/1/-1/2;
-    background-color: rgba(57, 57, 57, 0.838);
+    background-image: url(images/background/metal.jpg);
     color: black;
     padding:  30px;
     display: flex;
@@ -62,9 +63,9 @@ h1 {
     gap: 10px;
     align-items: center;
 }
-.logo:hover {
+/* .logo:hover {
     border: 2px solid rgb(130, 78, 0);
-}
+} */
 .logo img {
     height: 60px;
 }
@@ -115,7 +116,9 @@ a::before {
     display: grid;
     grid-template-columns: 2fr 1fr;
     padding: 5px 30px;
-    background-color: rgb(238, 238, 238);
+    background-image: linear-gradient(rgba(99, 99, 99, 0.813) 85%, rgb(130, 78, 0));
+    box-shadow: 0 5px 5px black;
+    z-index: 10;
 }
 .navbar-input {
     display: flex;
@@ -158,6 +161,7 @@ a::before {
     width: 50px;
     border-radius: 100px;
     content: url(https://static01.nyt.com/images/2021/09/14/science/07CAT-STRIPES/07CAT-STRIPES-mediumSquareAt3X-v2.jpg);
+    box-shadow: 0 0 5px black;
 }
 /*content css*/
 #content {
@@ -173,9 +177,11 @@ a::before {
 }
 #content>p {
     margin: 0;
-    color: aliceblue;
+    color: rgb(255, 255, 255);
     font-size: 1.5em;
+    font-weight: bold;
     margin: auto 0;
+    text-shadow: rgb(196, 196, 196) 1px 0 10px;
 }
 
 #project-container {
@@ -201,6 +207,7 @@ a::before {
     grid-template-areas: 
     "color-bar text"
     "color-bar icons";
+    box-shadow: 0 0 10px black;
 }
 .color-block {
     grid-area: color-bar;
@@ -237,6 +244,7 @@ a::before {
     box-sizing: border-box;
     background-color: rgba(190, 190, 190, 0.732);
     overflow: scroll;
+    box-shadow: 0 0 10px black;
 }
 #announcements-container hr {
     margin: 10px;
@@ -258,6 +266,7 @@ a::before {
     background-color: rgba(190, 190, 190, 0.732);
     margin-bottom: 10px;
     overflow: scroll;
+    box-shadow: 0 0 10px black;
 }
 .image-container {
     width: 60px;
@@ -266,6 +275,7 @@ a::before {
     position: relative;
     border-radius: 50px;
     flex-shrink: 0;
+    box-shadow: 0 0 5px black;
 }
 img[src="images/profile/ronnie-pic.png"]{
     height: 70px;
