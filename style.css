@@ -17,6 +17,10 @@ a {
 h1 {
     margin: 0;
 }
+.clickable:active {
+    scale: 0.9;
+    transition: .3s;
+}
 .hoverable:hover {
     scale: 1.1;
     transition: .3s;
@@ -27,7 +31,7 @@ h1 {
     display: grid;
     grid-template-columns: 1fr 4fr;
     grid-template-rows: 1fr 5fr;
-    /* position: fixed; */
+    position: fixed; 
 }
 /*dashboard css*/
 #dashboard {
@@ -36,6 +40,7 @@ h1 {
     grid-template-columns: auto 10px;
     transition-delay: 1s;
     z-index: 11;
+    box-sizing: border-box;
 }
 .dashboard-color-block {
     grid-column: 2/-1;
@@ -51,6 +56,8 @@ h1 {
     flex-direction: column;
     gap: 30px;
     line-height: 3rem;
+    box-sizing: border-box;
+    height: 100%;
 }
 .cont-dashboard a {
     font-size: 1.5em;
@@ -127,10 +134,15 @@ a::before {
 .navbar-input div input {
     width: 100%;
     border-radius: 10px;
-    border: 2px solid darkgray;
+    border: 0;
     height: 20px;
     text-align: center;
     font-size: 1.1rem;
+    outline: none;
+    transition: 0.5s;
+}
+.navbar-input div input[type=text]:focus {
+    border:3px solid rgb(48, 48, 48);
 }
 .navbar-input div {
     width: 100%;
@@ -138,11 +150,11 @@ a::before {
     align-items: center;
     gap: 10px;
 }
-.navbar-input div::before {
+/* .navbar-input div::before {
     content: url(images/svg/search.svg);
-    /* position: absolute;
-    transform: translateX(-30px); */
-}
+    -- position: absolute;
+    transform: translateX(-30px); --
+} */
 .navbar-btns {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -156,12 +168,29 @@ a::before {
     gap: 30px;
     justify-content: center;
 }
+.navbar-acc2 {
+    gap: 30px;
+}
+.navbar-acc2 h3 {
+    margin: 5px;
+}
 .acc-image {
     height: 50px;
     width: 50px;
     border-radius: 100px;
-    content: url(https://static01.nyt.com/images/2021/09/14/science/07CAT-STRIPES/07CAT-STRIPES-mediumSquareAt3X-v2.jpg);
+    content: url(./images/profile/teseo-pic.jpeg);
     box-shadow: 0 0 5px black;
+}
+.navbar-btns button {
+    border-radius: 20px;
+    border: 2px solid rgb(74, 74, 74);
+    box-shadow: 0 0 5px black;
+    height: 40px;
+    width: 80px;
+    background-color: rgb(172, 172, 172);
+}
+.navbar-btns button:hover {
+    background-color: rgb(99, 99, 99);
 }
 /*content css*/
 #content {
@@ -192,7 +221,9 @@ a::before {
     grid-template-columns: 1fr 1fr;
     overflow: scroll;
     height: 100%;
+    box-sizing: border-box;
     gap: 20px;
+    padding: 20px 0;
 }
 .project-item {
     height: 200px;
